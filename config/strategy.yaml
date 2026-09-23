@@ -1,0 +1,37 @@
+strategy:
+  enabled_strategies:
+    - "trend_following"
+    - "momentum"
+    - "mean_reversion"
+    - "breakout"
+
+  multi_resolution:
+    enabled: true
+    large_bar_role: "direction"
+    medium_bar_role: "setup"
+    small_bar_role: "entry"
+
+  defaults:
+    min_confidence: 0.5
+    signal_expiry_bars: 3
+
+  trend_following:
+    ema_fast: 12
+    ema_slow: 26
+    adx_period: 14
+    adx_threshold: 25
+
+  momentum:
+    rsi_period: 14
+    rsi_overbought: 70
+    rsi_oversold: 30
+    roc_period: 10
+
+  mean_reversion:
+    bb_period: 20
+    bb_std: 2.0
+    zscore_entry: 2.0
+
+  breakout:
+    lookback: 20
+    volume_multiplier: 1.5

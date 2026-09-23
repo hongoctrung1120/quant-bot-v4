@@ -1,0 +1,23 @@
+execution:
+  default_order_type: "limit"
+
+  costs:
+    maker_fee_pct: 0.02
+    taker_fee_pct: 0.05
+    slippage_pct: 0.01
+    spread_pct: 0.005
+    funding_rate_pct: 0.01
+    funding_interval_hours: 8
+
+  simulation:
+    partial_fills_enabled: true
+    latency_ms: 50
+    fill_probability: 0.95
+
+  reconciliation:
+    interval_seconds: 60
+    safe_mode_on_failure: true
+
+  paper_trading:
+    enabled: false
+    initial_balance: 100000.0

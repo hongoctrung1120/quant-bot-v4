@@ -1,0 +1,32 @@
+risk:
+  risk_per_trade_pct: 0.25
+  daily_loss_limit_pct: 3.0
+  max_leverage: 3.0
+  circuit_breaker_enabled: true
+  close_positions_on_breach: true
+
+  warning_threshold_pct: 2.0
+
+  drawdown:
+    daily_limit_pct: 3.0
+    weekly_limit_pct: 7.0
+    monthly_limit_pct: 15.0
+
+  leverage:
+    high_volatility_multiplier: 0.5
+    low_volatility_multiplier: 1.2
+    hard_max: 3.0
+
+  liquidity:
+    max_participation_rate: 0.05
+
+  states:
+    # Deterministic state machine transitions
+    warning_at_pct: 2.0
+    breach_at_pct: 3.0
+
+  protective_exits:
+    stop_loss_enabled: true
+    take_profit_enabled: true
+    intrabar_priority: "STOP_FIRST"  # STOP_FIRST | TARGET_FIRST
+

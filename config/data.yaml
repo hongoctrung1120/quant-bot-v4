@@ -1,0 +1,26 @@
+data:
+  primary_source: "trades"
+
+  storage:
+    hot: "redis"
+    primary: "postgresql"
+    cold: "parquet"
+
+  ingestion:
+    reconnect_max_retries: 10
+    reconnect_backoff_seconds: 5
+    duplicate_detection: true
+    out_of_order_tolerance_ms: 100
+
+  quality:
+    invalid_price_action: "reject"  # reject | warn
+    invalid_quantity_action: "reject"
+    gap_detection_enabled: true
+    max_price_change_pct: 50.0
+    gap_threshold_seconds: 300
+
+  symbols:
+    - "BTC/USDT"
+    - "ETH/USDT"
+    - "SOL/USDT"
+    - "XRP/USDT"

@@ -1,0 +1,16 @@
+system:
+  name: "Multi-Resolution Adaptive Quant Bot"
+  version: "4.0.0"
+  mode: "BACKTEST"  # BACKTEST | PAPER | LIVE
+  log_level: "INFO"
+  timezone: "UTC"
+  random_seed: 42
+
+  # LIVE mode requires explicit enablement
+  live_trading_enabled: false
+
+  # Session configuration
+  trading_session:
+    start: "00:00"
+    end: "23:59"
+    reset_daily_loss_at_session_start: true

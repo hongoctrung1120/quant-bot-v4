@@ -1,0 +1,28 @@
+bars:
+  dollar:
+    thresholds:
+      small: 250000
+      medium: 1000000
+      large: 5000000
+      very_large: 20000000
+
+    # Overshoot handling: when a trade crosses the threshold, the excess
+    # dollar volume carries forward to the next bar (CARRY_FORWARD).
+    # Alternative: SPLIT_TRADE splits the crossing trade across two bars.
+    overshoot_policy: "SPLIT_TRADE"
+
+  time:
+    intervals:
+      - "1m"
+      - "5m"
+      - "15m"
+      - "1h"
+      - "4h"
+      - "1d"
+
+  multi_resolution:
+    enabled: true
+    hierarchy:
+      direction: "very_large"
+      setup: "medium"
+      entry: "small"

@@ -1,0 +1,47 @@
+capital:
+  reserve_pct: 20.0
+  max_trading_capital_pct: 80.0
+  max_asset_allocation_pct: 40.0
+  max_strategy_allocation_pct: 50.0
+  max_single_position_pct: 15.0
+  max_gross_exposure_pct: 100.0
+  max_net_exposure_pct: 80.0
+
+  allocation_method: "inverse_volatility"  # fixed | equal | inverse_volatility
+
+  # Research inputs for inverse-volatility allocation. These are intentionally
+  # configurable rather than inferred from future data.
+  asset_volatilities:
+    "BTC/USDT": 0.02
+    "ETH/USDT": 0.04
+    "SOL/USDT": 0.08
+    "XRP/USDT": 0.06
+
+  asset_weights:
+    "BTC/USDT": 40.0
+    "ETH/USDT": 25.0
+    "SOL/USDT": 10.0
+    "XRP/USDT": 5.0
+
+  strategy_weights:
+    trend_following: 40.0
+    momentum: 20.0
+    mean_reversion: 20.0
+    breakout: 10.0
+
+  regime_adjustments:
+    TREND_BULL:
+      trend_following: 1.2
+      momentum: 1.2
+      mean_reversion: 0.7
+    TREND_BEAR:
+      trend_following: 1.2
+      momentum: 1.1
+      mean_reversion: 0.8
+    MEAN_REVERTING:
+      mean_reversion: 1.5
+      trend_following: 0.6
+    HIGH_VOLATILITY:
+      all: 0.7
+    LOW_VOLATILITY:
+      all: 1.1
