@@ -2,6 +2,8 @@
 
 Production-oriented, research-driven quantitative trading platform for backtesting, paper trading, and live trading.
 
+See [MATH_REFERENCE.md](MATH_REFERENCE.md) for every formula used in the system (indicators, regime rules, entry logic, position sizing, risk scalers, cost model, performance metrics, and validation statistics) — no ML/AI is used anywhere in the runtime.
+
 ## Design Philosophy
 
 This is **not** a simple indicator bot. It is a modular quantitative research and execution framework with strict separation of concerns:
